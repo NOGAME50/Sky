@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKY PLUG CDM REPORT🪬</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+max-width:650px;
+margin:auto;
+padding:20px;
+background:#050505;
+color:#eaeaea;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+/* ⭐ AJOUT ciel étoilé */
+
+#stars{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+/* ⭐ bloc solide non transparent */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#050505;
+opacity:0.96;
+z-index:-2;
+}
+
+h2{
+color:#ff1a1a;
+text-align:center;
+letter-spacing:3px;
+margin-bottom:25px;
+text-shadow:0 0 10px rgba(255,0,0,0.7);
+}
+
+.login-container{
+background:linear-gradient(145deg,#0a0a0a,#050505);
+padding:28px;
+border-radius:14px;
+border:1px solid rgba(255,0,0,0.5);
+margin-bottom:25px;
+box-shadow:
+0 0 12px rgba(255,0,0,0.25),
+inset 0 0 8px rgba(255,0,0,0.15);
+}
+
+.login-container label{
+display:block;
+margin-bottom:8px;
+color:#ff4040;
+font-size:14px;
+}
+
+.login-container input{
+width:100%;
+padding:11px;
+margin-bottom:16px;
+border-radius:10px;
+border:1px solid rgba(255,0,0,0.6);
+background:#080808;
+color:white;
+transition:0.25s;
+}
+
+.login-container input:focus{
+outline:none;
+border-color:#ff0000;
+box-shadow:0 0 10px rgba(255,0,0,0.6);
+}
+
+.login-btn{
+background:linear-gradient(90deg,#800000,#ff0000);
+color:white;
+padding:12px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+width:100%;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+.login-btn:hover{
+box-shadow:0 0 14px rgba(255,0,0,0.8);
+}
+
+.error-msg{
+color:#ff3333;
+text-align:center;
+margin-bottom:10px;
+display:none;
+}
+
+.content-section{
+display:none;
+}
+
+table{
+width:90%;
+margin:25px auto;
+}
+
+th{
+background:#111;
+color:#ff4040;
+padding:14px;
+border-radius:12px 0 0 12px;
+border-left:3px solid #ff0000;
+}
+
+td{
+background:#0a0a0a;
+padding:14px;
+border-radius:0 12px 12px 0;
+border-right:3px solid #ff0000;
+}
+
+textarea{
+width:100%;
+height:160px;
+padding:12px;
+border-radius:10px;
+border:1px solid rgba(255,0,0,0.6);
+background:#070707;
+color:white;
+resize:none;
+}
+
+textarea:focus{
+outline:none;
+box-shadow:0 0 10px rgba(255,0,0,0.7);
+}
+
+.btn-kirim{
+background:linear-gradient(90deg,#800000,#ff0000);
+color:white;
+padding:14px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-size:16px;
+text-decoration:none;
+display:inline-block;
+width:75%;
+text-align:center;
+font-weight:bold;
+}
+
+.btn-kirim:hover{
+box-shadow:0 0 15px rgba(255,0,0,0.8);
+}
+
+/* cacher les lignes adresse et objet */
+
+.hidden-row{
+display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+
+<h2>SKY PLUG CDM REPORT 🪬</h2>
+
+<div class="login-container" id="loginSection">
+
+<div class="error-msg" id="errorMsg">
+les informations saisie sont incorrect!
+</div>
+
+<label for="username">Username</label>
+<input type="text" id="username" placeholder="username">
+
+<label for="password">Password</label>
+<input type="password" id="password" placeholder="password">
+
+<button class="login-btn" onclick="checkLogin()">Login</button>
+
+<h5>Power by @Sky_Plug503</h5>
+
+</div>
+
+<div class="content-section" id="contentSection">
+
+<br>
+
+<h4>   WhatsApp BAN rapport🚫</h4>
+
+<form id="emailForm">
+
+<table>
+
+<tr class="hidden-row">
+<th>OBJET Email</th>
+<td>URGENT – Signalement d’exploitation et harcèlement de mineur sur WhatsApp</td>
+</tr>
+
+<tr class="hidden-row">
+<th>ADRESSE Email</th>
+<td>support@whatsapp.com, android@support.whatsapp.com, iphone@support.whatsapp.com, webclient@support.whatsapp.com, business-support@whatsapp.com, smb_web@support.whatsapp.com, enterprise@support.whatsapp.com, accessibility@whatsapp.com, privacy@whatsapp.com, report@cybertip.org, hotline@inhope.org, report@childhelplineinternational.org, abuse@interpol.int,support@whatsapp.com, android@support.whatsapp.com, iphone@support.whatsapp.com, webclient@support.whatsapp.com, business-support@whatsapp.com, smb_web@support.whatsapp.com, enterprise@support.whatsapp.com, accessibility@whatsapp.com, privacy@whatsapp.com, support@instagram.com, privacy@instagram.com, abuse@fb.com, records@fb.com, press@meta.com'</td>
+</tr>
+
+<tr>
+
+<th>SUPPORT</th>
+
+<td>
+
+<textarea name="pesan" placeholder="COLLER VÔTRE SUPPORTA ENVOIYER."></textarea>
+
+</td>
+
+</tr>
+
+</table>
+
+<a id="linkKirim" class="btn-kirim" href="#">
+ENVOIYER🎯
+</a>
+
+</form>
+
+<h4>Click the pink table above for the report</h4>
+
+</div>
+
+<script>
+
+function checkLogin(){
+
+const usernameInput=document.getElementById('username').value;
+const passwordInput=document.getElementById('password').value;
+
+const errorMsg=document.getElementById('errorMsg');
+const loginSection=document.getElementById('loginSection');
+const contentSection=document.getElementById('contentSection');
+
+if(usernameInput==='SkyPlug' && passwordInput==='papisky'){
+
+loginSection.style.display='none';
+contentSection.style.display='block';
+errorMsg.style.display='none';
+
+}else{
+
+errorMsg.style.display='block';
+
+}
+
+}
+
+document.getElementById('emailForm')?.addEventListener('input',function(){
+
+const subjek=encodeURIComponent('Signalement d’exploitation et harcèlement de mineur sur WhatsApp');
+
+const tujuan='support@whatsapp.com, android@support.whatsapp.com, iphone@support.whatsapp.com, webclient@support.whatsapp.com, business-support@whatsapp.com, smb_web@support.whatsapp.com, enterprise@support.whatsapp.com, accessibility@whatsapp.com, privacy@whatsapp.com, report@cybertip.org, hotline@inhope.org, report@childhelplineinternational.org, abuse@interpol.int,support@whatsapp.com, android@support.whatsapp.com, iphone@support.whatsapp.com, webclient@support.whatsapp.com, business-support@whatsapp.com, smb_web@support.whatsapp.com, enterprise@support.whatsapp.com, accessibility@whatsapp.com, privacy@whatsapp.com, support@instagram.com, privacy@instagram.com, abuse@fb.com, records@fb.com, press@meta.com';
+
+const pesan=encodeURIComponent(document.querySelector('textarea[name="pesan"]').value);
+
+const link=`mailto:${tujuan}?subject=${subjek}&body=${pesan}`;
+
+document.getElementById('linkKirim').setAttribute('href',link);
+
+});
+
+window.onload=function(){
+
+const linkKirim=document.getElementById('linkKirim');
+
+const subjek=encodeURIComponent('Signalement d’exploitation et harcèlement de mineur sur WhatsApp');
+
+const tujuan='support@whatsapp.com, android@support.whatsapp.com, iphone@support.whatsapp.com, webclient@support.whatsapp.com, business-support@whatsapp.com, smb_web@support.whatsapp.com, enterprise@support.whatsapp.com, accessibility@whatsapp.com, privacy@whatsapp.com, report@cybertip.org, hotline@inhope.org, report@childhelplineinternational.org, abuse@interpol.int,support@whatsapp.com, android@support.whatsapp.com, iphone@support.whatsapp.com, webclient@support.whatsapp.com, business-support@whatsapp.com, smb_web@support.whatsapp.com, enterprise@support.whatsapp.com, accessibility@whatsapp.com, privacy@whatsapp.com, support@instagram.com, privacy@instagram.com, abuse@fb.com, records@fb.com, press@meta.com';
+
+const link=`mailto:${tujuan}?subject=${subjek}`;
+
+linkKirim.setAttribute('href',link);
+
+}
+
+/* ⭐ animation étoiles */
+
+const canvas=document.getElementById("stars");
+const ctx=canvas.getContext("2d");
+
+function resize(){
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+}
+
+resize();
+window.addEventListener("resize",resize);
+
+let stars=[];
+
+for(let i=0;i<120;i++){
+stars.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2,
+speed:Math.random()*0.4
+});
+}
+
+function animateStars(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle="white";
+
+stars.forEach(star=>{
+
+ctx.beginPath();
+ctx.arc(star.x,star.y,star.size,0,Math.PI*2);
+ctx.fill();
+
+star.y+=star.speed;
+
+if(star.y>canvas.height){
+star.y=0;
+star.x=Math.random()*canvas.width;
+}
+
+});
+
+requestAnimationFrame(animateStars);
+}
+
+animateStars();
+
+</script>
+
+</body>
+</html>
